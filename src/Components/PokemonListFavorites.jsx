@@ -19,7 +19,7 @@ const PokemonListFavorites = () => {
             <p>{pokemon.name}</p>
             <button
               className="pokemon__btnDelete"
-              onClick={() => DeletePokemonFavorito(pokemon)}
+              onClick={() => DeletePokemonFavorito(pokemon.id)}
             >
               Delete
             </button>

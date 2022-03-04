@@ -24,13 +24,11 @@ const useStore = create((set, get) => ({
         const newUser = [...get().List_Users, dataUser]
         set({ List_Users: newUser })
         get().SaveUsers()
-
     },
     InitialSession(text) {
         let get_user = get().List_Users.find(user => user.name === text.name && user.paswoord === text.paswoord)
         if (get_user !== undefined) {
             set({ user_global: get_user })
-
             return
         }
         set({ error: 'usuario no encontrado pe!' })
@@ -64,9 +62,9 @@ const useStore = create((set, get) => ({
     },
 
     DeletePokemonFavorito(PokemonData) {
-
-        const userData = get().user_global
-        const FilterPokemon = userData.listFavoritos.filter(pokemon => pokemon.id !== PokemonData.id)
+        console.log('id pokemon',PokemonData)
+        const userData = get().user_global.listFavoritos
+        const FilterPokemon = userData.filter(pokemon => pokemon.id !== PokemonData)
         set({ pokemonFiltrados: FilterPokemon })
         console.log(FilterPokemon)
         get().SaveUsers();
@@ -75,7 +73,6 @@ const useStore = create((set, get) => ({
     FecthPokemon() {
         for (let index = 1; index <= 10; index++) {
             const url = `https://pokeapi.co/api/v2/pokemon/${index}`;
-
             fetch(url)
                 .then(response => response.json())
                 .then(result => {
@@ -83,7 +80,6 @@ const useStore = create((set, get) => ({
                 })
         }
     }
-
 }))
 
 export default useStore
