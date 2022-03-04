@@ -56,7 +56,7 @@ const FormLogin = () => {
         autoComplete="off"
         onChange={(e) => handleChangeInput(e)}
       />
-      <button className="btn btn_form_login btn_login background-color">
+      <button className="btn btn_form_login background-color">
         Login
       </button>
     </form>

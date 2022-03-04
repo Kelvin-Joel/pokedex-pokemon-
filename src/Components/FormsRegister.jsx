@@ -32,11 +32,11 @@ const FormsRegister = () => {
 
   return (
     <form
-      className="forms form_register_user"
+      className="form"
       onSubmit={(e) => handleSubmit(e)}
     >
       <input
-        className="input_form"
+        className="form__input"
         name="name"
         value={inputText.name}
         type="text"
@@ -45,7 +45,7 @@ const FormsRegister = () => {
         onChange={(e) => handleChangeInput(e)}
       />
       <input
-        className="input_form"
+        className="form__input"
         name="paswoord"
         value={inputText.paswoord}
         type="password"
