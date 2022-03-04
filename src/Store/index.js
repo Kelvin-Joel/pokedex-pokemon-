@@ -1,6 +1,5 @@
 import create from 'zustand'
 
-
 const useStore = create((set, get) => ({
     List_Users: JSON.parse(localStorage.getItem('users')) === null ? [] : JSON.parse(localStorage.getItem('users')),
     error: '',
@@ -9,9 +8,9 @@ const useStore = create((set, get) => ({
     pokemon_list_status: false,//estado para mostrar y ocultar listado de pokemones!
     OpenListFavorites: false,//estado para abrir y cerrar ventana de listado de pokemones favoritos
     data_fetch: [],//capturamos datos de la api :S
-    pokemonFiltrados:'',
+    pokemonFiltrados: '',
     SaveUsers() {
-       // const ListDataUser = List_Users
+        // const ListDataUser = List_Users
         localStorage.setItem('users', JSON.stringify(get().List_Users))
     },
 
@@ -25,13 +24,13 @@ const useStore = create((set, get) => ({
         const newUser = [...get().List_Users, dataUser]
         set({ List_Users: newUser })
         get().SaveUsers()
-        
+
     },
     InitialSession(text) {
         let get_user = get().List_Users.find(user => user.name === text.name && user.paswoord === text.paswoord)
         if (get_user !== undefined) {
             set({ user_global: get_user })
-           
+
             return
         }
         set({ error: 'usuario no encontrado pe!' })
@@ -68,11 +67,10 @@ const useStore = create((set, get) => ({
 
         const userData = get().user_global
         const FilterPokemon = userData.listFavoritos.filter(pokemon => pokemon.id !== PokemonData.id)
-        set({pokemonFiltrados:FilterPokemon})
+        set({ pokemonFiltrados: FilterPokemon })
         console.log(FilterPokemon)
         get().SaveUsers();
     },
-
 
     FecthPokemon() {
         for (let index = 1; index <= 10; index++) {

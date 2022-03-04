@@ -1,16 +1,16 @@
-.forms{
+.form{
     width: 90%;
     margin: 0 auto;
     position: absolute;
 }
-.input_form{
+.form__input{
     padding: .7em 1.5em;
     display: block;
     width: 100%;
     margin-bottom: 1.5em;
     border-radius: 5px;
 }
-.forms .btn{
+.form .btn{
     padding: .7em ;
     width: 100%;
     margin-bottom: 1.5em;

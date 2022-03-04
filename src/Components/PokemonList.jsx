@@ -7,15 +7,15 @@ const PokemonList = () => {
   const Favorites = user_global.listFavoritos;
 
   return (
-    <div className="pokemones_grid">
+    <div className="pokemon">
       {data_fetch.map((pokemon) => (
-        <div className="pokemon_card" key={pokemon.id}>
-          <img src={pokemon.sprites.other.dream_world.front_default} />
+        <div className="pokemon__card" key={pokemon.id}>
+          <img className="pokemon__img" src={pokemon.sprites.other.dream_world.front_default} />
           <p>{pokemon.name}</p>
           {Favorites.filter((favorito) => favorito.id === pokemon.id).length <=
           0 ? (
-            <span
-              className="btn_captured flex-center"
+            <button
+              className="pokemon__btn flex-center"
               onClick={() =>
                 AddPokemonFavorite({
                   id: pokemon.id,
@@ -25,12 +25,12 @@ const PokemonList = () => {
               }
             >
               Add Favorito
-            </span>
+            </button>
           ) : (
-            <span
-              className="btn_captured flex-center">
+            <button
+              className="pokemon__btn pokemon__btn--warning flex-center">
               Atrapado
-            </span>
+            </button>
           )}
         </div>
       ))}

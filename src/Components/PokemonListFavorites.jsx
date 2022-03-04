@@ -12,13 +12,13 @@ const PokemonListFavorites = () => {
         className="btnClose"
         onClick={() => ShowFavoritesList()}
       />
-      <div className="pokemones_grid">
+      <div className="pokemon">
         {user_global.listFavoritos.map((pokemon) => (
-          <div key={pokemon.id} className="pokemon_card">
-            <img src={pokemon.image} />
+          <div key={pokemon.id} className="pokemon__card">
+            <img className="pokemon__img" src={pokemon.image} />
             <p>{pokemon.name}</p>
             <button
-              className="btn_delete"
+              className="pokemon__btnDelete"
               onClick={() => DeletePokemonFavorito(pokemon)}
             >
               Delete

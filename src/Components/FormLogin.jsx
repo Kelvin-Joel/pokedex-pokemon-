@@ -37,9 +37,9 @@ const FormLogin = () => {
     }
   }, [user_global]);
   return (
-    <form className="forms" onSubmit={(e) => handleSubmit(e)}>
+    <form className="form" onSubmit={(e) => handleSubmit(e)}>
       <input
-        className="input_form"
+        className="form__input"
         type="text"
         placeholder="Name User"
         name="name"
@@ -48,7 +48,7 @@ const FormLogin = () => {
         onChange={(e) => handleChangeInput(e)}
       />
       <input
-        className="input_form"
+        className="form__input"
         type="password"
         placeholder="Paswwoord"
         name="paswoord"
