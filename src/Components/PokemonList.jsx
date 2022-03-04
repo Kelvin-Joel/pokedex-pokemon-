@@ -10,7 +10,10 @@ const PokemonList = () => {
     <div className="pokemon">
       {data_fetch.map((pokemon) => (
         <div className="pokemon__card" key={pokemon.id}>
-          <img className="pokemon__img" src={pokemon.sprites.other.dream_world.front_default} />
+          <img
+            className="pokemon__img"
+            src={pokemon.sprites.other.dream_world.front_default}
+          />
           <p>{pokemon.name}</p>
           {Favorites.filter((favorito) => favorito.id === pokemon.id).length <=
           0 ? (
@@ -27,8 +30,7 @@ const PokemonList = () => {
               Add Favorito
             </button>
           ) : (
-            <button
-              className="pokemon__btn pokemon__btn--warning flex-center">
+            <button className="pokemon__btn pokemon__btn--warning flex-center">
               Atrapado
             </button>
           )}

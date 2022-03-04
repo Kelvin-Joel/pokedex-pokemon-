@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
 }
-.PokemonListNav{
+.navbarPokemon{
     padding: 1em;
     color: #fff;
     background: var(--backgroun-color);
@@ -28,15 +28,15 @@
     position: fixed;
     width: 100%;
 }
-.user{
+.navbar__user{
     font-size: 1.2em;
     font-weight: bold;
     text-transform: lowercase;
 }
-.buttons_nabvar{
+.buttons{
     width: 250px;
 }
-.PokemonListNav .btn_nabvar{
+.button__navbar{
     padding: .5em 1.5em;
     background-color: #4fa8fb;
     color: var(--color-white);

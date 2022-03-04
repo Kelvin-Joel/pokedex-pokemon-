@@ -28,19 +28,19 @@
   );
   color: #fff;
 }
-.title {
+.navba__title {
   font-size: 2em;
 }
-.menu_nabvar {
+.navbar {
   margin-bottom: 2em;
 }
-.menu_tags {
+.navbar__tags {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 90%;
   margin: 0 auto;
 }
-.btn_tags {
+.navbar__btn {
   padding: 0.7em;
   color: var(--color-white);
   cursor: pointer;
